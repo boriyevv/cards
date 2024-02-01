@@ -1,0 +1,128 @@
+// =====  colors   ======
+
+$secondary-color: #0E8784;
+$primary-color: #333D4B;
+$card-color: #FEFCF7;
+$card-hover: #FDD6BA;
+$grey-color: #83888F;
+
+
+// ======== button mixins  =========
+
+@mixin button($width: 217px, $bg: #0E8784, $height: 56px, $border: 3px solid #66D2CF, $radius: 8px, $color: #fff) {
+    width: $width;
+    height: $height;
+    border: $border;
+    border-radius: $radius;
+    color: $color;
+    background: $bg;
+}
+
+@mixin btnHover($border: 3px solid #0E8784, $bg: #66D2CF, $color: #0E8784, $transition: all 0.5s ease-in-out) {
+    border: $border;
+    background: $bg;
+    color: $color;
+    transition: $transition;
+}
+
+@mixin btnActive($border: 3px solid #0E8784, $bg: #d3d3d3, $color: #0E8784, $transition: all 0.5s ease-in-out) {
+    border: $border;
+    background: $bg;
+    color: $color;
+    transition: $transition;
+}
+
+//    ============  card mixins  ===========
+
+
+@mixin card($width: 260px, $height: 250px, $bg: #FEFCF7, $padding: 20px, $radius: 16px, $color: #333D4B) {
+
+    width: $width;
+    height: $height;
+    background: $bg;
+    padding: $padding;
+    border-radius: $radius;
+    color: $color;
+
+}
+
+
+@mixin cardHover($width: 260px, $height: 250px, $bg: #FDD6BA, $padding: 20px, $radius: 16px, $color: #333D4B, $transition: all 0.5s ease-in-out) {
+
+    width: $width;
+    height: $height;
+    background: $bg;
+    padding: $padding;
+    border-radius: $radius;
+    color: $color;
+    transition: $transition;
+}
+
+
+@mixin cardActive($width: 260px, $height: 250px, $bg: #0E8784, $padding: 20px, $radius: 16px, $color: #fff, $transition:all 0.5s ease-in-out) {
+
+    width: $width;
+    height: $height;
+    background: $bg;
+    padding: $padding;
+    border-radius: $radius;
+    color: $color;
+    transition: $transition;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 1200px;
+    padding: 40px;
+    margin: 0 auto;
+}
+
+.card-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card{
+    @include card()
+}
+
+.card:hover{
+    @include cardHover()
+}
+
+.card:active{
+    @include cardActive()
+}
+
+
+.btn{
+    margin-top: 20px;
+    @include button()
+}
+
+.btn:hover{
+    @include btnHover()
+}
+
+.btn:active{
+    @include btnActive()
+}
+
+
+
+
+@media only screen and (max-width:976px){
+    .container{
+        width: 90%;
+        padding: 20px;
+    }
+    .card-wrapper{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
